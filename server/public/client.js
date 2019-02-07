@@ -1,7 +1,7 @@
 $(document).ready(onReady);
 
 function onReady() {
-    $('#submitB').on('click', submitWolf);
+    $('#submitB').on('click', submitPlayer);
     $.ajax({
         method: 'GET',
         url: '/names'
@@ -10,7 +10,7 @@ function onReady() {
             let name = response[i];
             $('#nameTableBody').append(`
                 <tr>
-                    <td>${name}</td>
+                    <td>${name.name}</td>
                     
                    
                 </tr>
@@ -29,7 +29,7 @@ console.log(newPlayer)
 
     $.ajax({
         method: 'POST',
-        url: '/names',
+        url: '/name',
         data: newPlayer
            
     }).then(function () {
@@ -45,7 +45,7 @@ function refreshPlayers(){
         let name = response[i];
         $('#nameTableBody').append(`
                 <tr>
-                    <td>${name}</td>
+                    <td>${name.name}</td>
         
                    
                 </tr>

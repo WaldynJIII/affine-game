@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.get('/names', (req, res) => {
     res.send(names);
 });
-app.post('/names', (req, res) => {
+app.post('/name', (req, res) => {
     console.log(req.body)
    names.push(req.body)
     res.send(201);
